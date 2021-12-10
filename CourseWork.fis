@@ -1,0 +1,50 @@
+[System]
+Name='CourseWork'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='AtmTemp'
+Range=[-20 40]
+NumMFs=5
+MF1='VL':'trapmf',[-20 -20 -18.5 -6.5]
+MF2='L':'trimf',[-15 -5 5]
+MF3='M':'trimf',[-5 10 25]
+MF4='H':'trimf',[10 25 40]
+MF5='VH':'trapmf',[26.5 38.5 40 40]
+
+[Input2]
+Name='Light'
+Range=[2000 20000]
+NumMFs=5
+MF1='VL':'trapmf',[0 1550 2450 6000]
+MF2='L':'trimf',[2000 6500 11000]
+MF3='M':'trimf',[6500 11000 15500]
+MF4='H':'trimf',[11000 15500 20000]
+MF5='VH':'trapmf',[15950 19550 20450 24000]
+
+[Input3]
+Name='Humidity'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='mf2':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='mf3':'trimf',[0.583333333333333 1 1.41666666666667]
+
+[Output1]
+Name='Heater'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='mf2':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='mf3':'trimf',[0.583333333333333 1 1.41666666666667]
+
+[Rules]
